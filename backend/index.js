@@ -11,11 +11,11 @@ import userRouter from "./routes/userRoute.js"
 import imageRoute from "./routes/imageRoutes.js"
 const app = express();
 
-// app.use(cors({
-//     origin: [process.env.ORIGIN],
-//     methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
-//     credentials: true
-// }));
+app.use(cors({
+    origin: [process.env.ORIGIN],
+    methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
+    credentials: true
+}));
 
 
 cloudinary.v2.config({
@@ -25,7 +25,7 @@ cloudinary.v2.config({
 })
 
 
-app.use(cors());
+// app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
