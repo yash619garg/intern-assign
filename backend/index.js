@@ -34,8 +34,8 @@ app.get("/", (req, res) => {
     res.send("Hello World!")
 })
 
-app.use("/api/users", userRouter)
-app.use("/api/images", imageRoute)
+app.use("/users", userRouter)
+app.use("/images", imageRoute)
 
 const port = process.env.PORT || 5000;
 
